@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import { registerMicroApps, start } from 'qiankun';
+import { registerMicroApps, start, loadMicroApp } from 'qiankun';
+import components from '@/utils/components';
 
 export default {
   name: 'Micro',
@@ -12,9 +13,10 @@ export default {
   },
   methods: {
     init() {
+      // this.regMicro();
       this.loadMicro();
     },
-    loadMicro() {
+    regMicro() {
       // 注册子应用
       registerMicroApps([
         {
@@ -30,6 +32,17 @@ export default {
 
       // 开启服务
       start();
+    },
+    loadMicro() {
+      loadMicroApp({
+        name: 'micro_01',
+        entry: '//localhost:9001',
+        container: '#child_container',
+        props: {
+          t1: 't1',
+          components,
+        },
+      });
     },
   },
 };

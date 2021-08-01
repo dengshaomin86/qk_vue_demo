@@ -11,7 +11,11 @@ Vue.config.productionTip = false;
 let router = null;
 let instance = null;
 
-function render() {
+function render(props = {}) {
+  const { container, components } = props;
+
+  Vue.use(components);
+
   router = new VueRouter({
     mode: 'hash',
     routes,
@@ -24,6 +28,7 @@ function render() {
   }).$mount('#app-child');
 }
 
+// 独立运行时
 if (!window.__POWERED_BY_QIANKUN__) {
   render();
 }
@@ -34,11 +39,12 @@ export async function bootstrap() {
 
 export async function mount(props) {
   console.log('props from main app', props);
-  render();
+  render(props);
 }
 
 export async function unmount() {
   instance.$destroy();
+  instance.$el.innerHTML = '';
   instance = null;
   router = null;
 }

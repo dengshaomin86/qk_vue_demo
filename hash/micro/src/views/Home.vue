@@ -2,6 +2,7 @@
   <div>
     <h1>home</h1>
     <HelloWorld msg="Hello world" />
+    <TextView />
     <p>{{ name }}</p>
   </div>
 </template>

@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 
 export const routes = [
   {
-    path: '/micro/',
+    path: '/micro/home',
     name: 'Home',
     component: Home,
   },
@@ -18,8 +18,9 @@ export const routes = [
     component: About,
   },
   {
-    path: '/micro/user',
+    path: '/micro/user/:username?',
     name: 'User',
     component: User,
+    props: true,
   },
 ];

@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link :to="{ name: 'Home' }">Home</router-link> | <router-link :to="{ name: 'About' }">About</router-link> |
-      <router-link :to="{ name: 'User' }">User</router-link>
+      <router-link :to="{ name: 'User', params: { username: 'tom' } }">User</router-link>
     </div>
     <router-view />
   </div>

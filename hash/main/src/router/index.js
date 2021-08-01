@@ -11,7 +11,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/micro/:path?',
+    path: '/micro/*',
     name: 'Micro',
     component: () => import(/* webpackChunkName: "micro" */ '../views/Micro.vue'),
   },

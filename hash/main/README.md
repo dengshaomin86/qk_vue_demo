@@ -1,4 +1,4 @@
-# vue_template
+# qk_vue_hash_main
 
 ## Project setup
 ```

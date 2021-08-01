@@ -1,9 +1,10 @@
-# 微应用配置
+const path = require('path');
+const { name } = require('./package');
 
-## 1. 修改 vue.config.js
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
-```
-// vue.config.js
 module.exports = {
   // outputDir: 'dist',
   // assetsDir: 'static',
@@ -35,21 +36,3 @@ module.exports = {
     },
   },
 };
-```
-
-## 2. 修改 main.js
-
-```
-// main.js
-```
-
-## 3. 修改 public/index.html，id 改为当前应用 id：app => app-child
-
-```
-// index.html
-<div id="app-child"></div>
-```
-
-# 注意事项
-
-- 1. 路由不能用懒加载

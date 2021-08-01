@@ -1,12 +1,12 @@
 <template>
-  <div class="about">
-    <h1>This is an micro about page</h1>
+  <div>
+    <h1>user</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'About',
+  name: 'User',
 };
 </script>
 

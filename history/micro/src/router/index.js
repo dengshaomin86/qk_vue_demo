@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import User from '../views/User.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
@@ -13,13 +15,18 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: About,
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User,
   },
 ];
 
-const router = new VueRouter({
-  mode: 'hash',
-  routes,
-});
+// const router = new VueRouter({
+//   mode: 'hash',
+//   routes,
+// });
 
-export default router;
+// export default router;

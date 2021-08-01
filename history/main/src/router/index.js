@@ -11,6 +11,11 @@ const routes = [
     component: Home,
   },
   {
+    path: '/micro/:path?',
+    name: 'Micro',
+    component: () => import(/* webpackChunkName: "micro" */ '../views/Micro.vue'),
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
@@ -18,7 +23,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   routes,
 });
 

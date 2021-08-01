@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import store from './store';
 import { routes } from './router';
+import { cloneDeep } from 'lodash';
 
 Vue.use(VueRouter);
 
@@ -13,8 +14,10 @@ let instance = null;
 
 function render(props = {}) {
   const { container, components } = props;
+  const _components = cloneDeep(components);
+  console.log(_components);
 
-  Vue.use(components);
+  Vue.use(_components);
 
   router = new VueRouter({
     mode: 'hash',

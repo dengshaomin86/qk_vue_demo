@@ -1,9 +1,10 @@
-# 微应用配置
+const path = require('path');
+const { name } = require('./package');
 
-## 1. 修改 vue.config.js
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
 
-```
-// vue.config.js
 module.exports = {
   // outputDir: 'dist',
   // assetsDir: 'static',
@@ -35,23 +36,3 @@ module.exports = {
     },
   },
 };
-```
-
-## 2. 修改 main.js
-
-```
-// main.js
-```
-
-## 3. 修改 public/index.html，id 改为当前应用 id：app => app-child
-
-```
-// index.html
-<div id="app-child"></div>
-```
-
-# 注意事项
-
-- 1. 路由不能用懒加载
-- 2. hash 模式路由 path 需要统一添加路由匹配前缀 /micro。如：path: '/micro/about'
-- 3. history 模式可以通过配置 base 添加路由匹配前缀 /micro。如：base: '/micro'

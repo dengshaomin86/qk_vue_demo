@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    name: 'micro_history',
+    name: 'micro_hash',
   },
   mutations: {},
   actions: {},

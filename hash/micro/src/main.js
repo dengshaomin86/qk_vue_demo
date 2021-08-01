@@ -11,8 +11,7 @@ let instance = null;
 
 function render() {
   router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/micro' : '/',
-    mode: 'history',
+    mode: 'hash',
     routes,
   });
 
@@ -41,3 +40,9 @@ export async function unmount() {
   instance = null;
   router = null;
 }
+
+// new Vue({
+//   router,
+//   store,
+//   render: (h) => h(App),
+// }).$mount('#app');

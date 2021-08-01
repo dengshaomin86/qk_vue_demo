@@ -30,7 +30,7 @@ module.exports = {
     'comma-dangle': [
       'error',
       {
-        arrays: 'always',
+        arrays: 'ignore',
         objects: 'ignore',
         imports: 'never',
         exports: 'never',

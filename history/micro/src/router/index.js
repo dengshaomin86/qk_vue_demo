@@ -1,10 +1,6 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import User from '../views/User.vue';
-
-Vue.use(VueRouter);
 
 export const routes = [
   {
@@ -18,8 +14,9 @@ export const routes = [
     component: About,
   },
   {
-    path: '/user',
+    path: '/user/:username?',
     name: 'User',
     component: User,
+    props: true,
   },
 ];

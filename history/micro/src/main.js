@@ -4,6 +4,8 @@ import App from './App.vue';
 import store from './store';
 import { routes } from './router';
 
+Vue.use(VueRouter);
+
 Vue.config.productionTip = false;
 
 let router = null;
